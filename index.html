@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>About Svelte</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link type="text/css" rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# About
+
+![svelte](./img/svelte.png)
+
+---
+class: center, middle
+
+## The new kid on the block
+
+![the new kids on the block](./img/new-kids-on-the-block_orig.jpg)
+
+---
+class: center, middle
+
+## Hype
+
+![hypster](./img/hipster.jpg)
+
+---
+class: center, middle
+
+
+> Svelte is a component framework.<br>
+> A language and a compiler.
+
+---
+class: center, middle
+
+### One screen rule
+
+![common setup](./img/many-screens.jpg)
+
+
+---
+class: middle
+
+```html
+<script>
+    let event = 'dot.js';
+</script>
+
+<style>
+    h1 {
+        color: navy;
+    }
+</style>
+
+<h1> Good evening {event}</h1>
+
+
+```
+[repl](https://svelte.dev/repl/b5340def6b2140f4a7a0aa57865230f4?version=3)
+---
+class: middle, center
+
+### Boilerplate free
+
+<img alt="one way binding" src="./img/useless.gif" height="500px" />
+
+
+---
+class: middle
+
+```html
+<script>
+    export let label  = 'Am I a button ?';
+    export let active = false;
+</script>
+
+<style>
+	.active {
+        color: white;
+        background-color: darkblue;
+    }
+</style>
+
+<button class:active>{label}</button>
+
+```
+[Source](https://svelte.dev/repl/77cd3526d1274a4bbf908fd2ec3cf2c2?version=3.15.0)
+---
+class: middle, center
+
+
+### Reactive by design
+
+<img alt="one way binding" src="./img/reactive.gif" height="520px" />
+
+
+---
+class: middle
+
+```html
+<script>
+  let tempFarenheit = 32;
+  let tempCelcius;
+
+  $: tempCelcius = (tempFarenheit - 32) * 0.55;
+
+</script>
+
+<style>
+  span {
+    font-weight: bold;
+  }
+</style>
+
+<label>
+    Value in F° :
+    <input
+        bind:value={tempFarenheit}
+        type="number" min="0" max="200"
+    />
+</label>
+
+<p>Value in C° : <span>{tempCelcius}</span></p>
+
+```
+[repl](https://svelte.dev/repl/fe4e0dfd70cc4e7185617489a14ad71c?version=3.15.0)
+
+---
+class: middle, center
+
+### Style included
+
+![fashion](./img/style.jpg)
+
+---
+class: middle
+
+```html
+<script>
+    export let highlight = false;
+    export let outline   = false;
+</script>
+
+<style>
+    p {
+        font-family: monospace;
+        font-style: italic;
+    }
+    .highlight {
+        background-color: pink;
+        color: purple;
+
+    }
+    .outline {
+       border: dashed 3px blue;
+    }
+</style>
+
+<p class:highlight class:outline>Beware fashion included</p>
+
+```
+[repl](https://svelte.dev/repl/f6be800ba43b4666afe9802ab3018687?version=3)
+---
+class: middle
+
+To be continued
+
+- performance impact (no runtime)
+- a11y support
+- animation/transition support
+- state management
+- export (vanilla, web component,  etc.)
+- tools and side projects (SvelteGL, Sapper, SvelteNative)
+- drawbacks
+
+    </textarea>
+    <script src="js/remark-latest.min.js"></script>
+    <script>
+        var slideshow = remark.create({
+            ratio: '4:3'
+        });
+    </script>
+  </body>
+</html>
