@@ -46,9 +46,9 @@ class: center, middle
 
 
 ---
-class: middle
+class: middle, center
 
-```html
+```svelte
 <script>
     let event = 'dot.js';
 </script>
@@ -60,10 +60,10 @@ class: middle
 </style>
 
 <h1> Good evening {event}</h1>
-
-
 ```
-[repl](https://svelte.dev/repl/b5340def6b2140f4a7a0aa57865230f4?version=3)
+
+✨ [REPL](https://svelte.dev/repl/b5340def6b2140f4a7a0aa57865230f4?version=3) ✨
+
 ---
 class: middle, center
 
@@ -73,7 +73,7 @@ class: middle, center
 
 
 ---
-class: middle
+class: middle, center
 
 ```html
 <script>
@@ -91,7 +91,8 @@ class: middle
 <button class:active>{label}</button>
 
 ```
-[Source](https://svelte.dev/repl/77cd3526d1274a4bbf908fd2ec3cf2c2?version=3.15.0)
+
+✨ [REPL](https://svelte.dev/repl/77cd3526d1274a4bbf908fd2ec3cf2c2?version=3.15.0) ✨
 ---
 class: middle, center
 
@@ -102,7 +103,7 @@ class: middle, center
 
 
 ---
-class: middle
+class: middle, center
 
 ```html
 <script>
@@ -130,7 +131,7 @@ class: middle
 <p>Value in C° : <span>{tempCelcius}</span></p>
 
 ```
-[repl](https://svelte.dev/repl/fe4e0dfd70cc4e7185617489a14ad71c?version=3.15.0)
+✨ [REPL](https://svelte.dev/repl/fe4e0dfd70cc4e7185617489a14ad71c?version=3.15.0) ✨
 
 ---
 class: middle, center
@@ -140,7 +141,7 @@ class: middle, center
 ![fashion](./img/style.jpg)
 
 ---
-class: middle
+class: middle, center
 
 ```html
 <script>
@@ -166,7 +167,7 @@ class: middle
 <p class:highlight class:outline>Beware fashion included</p>
 
 ```
-[repl](https://svelte.dev/repl/f6be800ba43b4666afe9802ab3018687?version=3)
+✨[REPL](https://svelte.dev/repl/f6be800ba43b4666afe9802ab3018687?version=3)✨
 ---
 class: middle
 
@@ -184,7 +185,9 @@ To be continued
     <script src="js/remark-latest.min.js"></script>
     <script>
         var slideshow = remark.create({
-            ratio: '4:3'
+            ratio: '4:3',
+            highlightStyle: 'tomorrow-night-eighties',
+            highlightSpans: false
         });
     </script>
   </body>
