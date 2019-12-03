@@ -10,7 +10,7 @@
 
 class: center, middle
 
-# About
+# About Svelte
 
 _under construction - style/colors to be done_
 
@@ -157,7 +157,6 @@ class: middle, center
     .highlight {
         background-color: pink;
         color: purple;
-
     }
     .outline {
        border: dashed 3px blue;
@@ -167,19 +166,54 @@ class: middle, center
 <p class:highlight class:outline>Beware fashion included</p>
 
 ```
-✨[REPL](https://svelte.dev/repl/f6be800ba43b4666afe9802ab3018687?version=3)✨
+✨ [REPL](https://svelte.dev/repl/f6be800ba43b4666afe9802ab3018687?version=3) ✨
+---
+class: middle, center
+
+```html
+<script>
+    import { fade, fly } from 'svelte/transition';
+    export let highlight = false;
+    export let outline   = false;
+</script>
+
+<style>
+    p {
+        font-family: monospace;
+        font-style: italic;
+    }
+    .highlight {
+        background-color: pink;
+        color: purple;
+    }
+    .outline {
+       border: dashed 3px blue;
+    }
+</style>
+
+<p class:highlight class:outline
+    in:fly={{ y: -200, duration : 2000 }}
+    out:fade
+ >Beware flying fashion included</p>
+```
+✨ [REPL](https://svelte.dev/repl/33816c63c777420d90dd357226c23bf0?version=3.16.0) ✨
+---
+class: middle, center
+
+### Size matters (in web dev)
+
+![wrong tool](./img/size.gif)
+
 ---
 class: middle
 
-To be continued
+Free topics ?
 
-- performance impact (no runtime)
-- a11y support
-- animation/transition support
+- performance impact
+- a11y
 - state management
-- export (vanilla, web component,  etc.)
-- tools and side projects (SvelteGL, Sapper, SvelteNative)
-- drawbacks
+- reusable component
+---
 
     </textarea>
     <script src="js/remark-latest.min.js"></script>
