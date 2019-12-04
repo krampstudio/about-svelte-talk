@@ -200,6 +200,60 @@ class: middle, center
 ---
 class: middle, center
 
+### State included
+
+![robot](./img/style.jpg)
+
+---
+class: middle, center
+
+```js
+import { writable } from 'svelte/store';
+
+const states = {
+    up : 'up',
+    right : 'right',
+    down : 'down',
+    left : 'left'
+    };
+
+function createRobotState() {
+	const { subscribe, set, update } = writable(states.up);
+
+	return {
+        subscribe,
+        set,
+        update,
+        move(newState){
+            set(newState);
+        }
+	};
+}
+
+export const robotState = createRobotState();
+```
+
+---
+class: middle, center
+
+```html
+<script>
+    import { robotState } from './robotState.js';
+</script>
+
+<h1> Robot is {$robotState}</h1>
+
+<button on:click={ () => robotState.move('up') } > ↑ </button>
+<button on:click={ () => robotState.move('right') } > →  </button>
+<button on:click={ () => robotState.move('down') } > ↓ </button>
+<button on:click={ () => robotState.move('left') } > ←  </button>
+
+```
+✨ [REPL](https://svelte.dev/repl/f6be800ba43b4666afe9802ab3018687?version=3) ✨
+---
+
+class: middle, center
+
 ### Size matters (in web dev)
 
 ![wrong tool](./img/size.gif)
@@ -211,8 +265,14 @@ Free topics ?
 
 - performance impact
 - a11y
-- state management
 - reusable component
+- integration
+
+---
+class: middle, center
+
+@kramp
+
 ---
 
     </textarea>
